@@ -1,3 +1,4 @@
+import 'package:fit_tracker_app/pages/advisior_page.dart';
 import 'package:fit_tracker_app/pages/chat_page.dart';
 import 'package:fit_tracker_app/pages/home_page.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: chatPage());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: HomePage());
   }
 }

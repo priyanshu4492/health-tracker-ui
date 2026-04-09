@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:fit_tracker_app/pages/advisior_page.dart';
+import 'package:fit_tracker_app/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class chatPage extends StatefulWidget {
@@ -97,22 +99,26 @@ class _chatPageState extends State<chatPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     //profile icon
-                    Container(
-                      height: 70,
-                      width: 70,
-                     
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: Colors.white.withOpacity(0.08),
-                        border: Border.all(
-                          color: Colors.white.withOpacity(0.2),
-                          width: 1,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => HomePage()),
+                        );
+                      },
+                      child: Container(
+                        height: 70,
+                        width: 70,
+
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          color: Colors.white.withOpacity(0.08),
+                          border: Border.all(
+                            color: Colors.white.withOpacity(0.2),
+                            width: 1,
+                          ),
                         ),
-                      ),
-                       child: Icon(
-                        Icons.multiple_stop,
-                        size: 30,
-                        color: Colors.white,
+                        child: Icon(Icons.home, size: 30, color: Colors.white),
                       ),
                     ),
                     Expanded(
@@ -138,10 +144,65 @@ class _chatPageState extends State<chatPage> {
                     ),
 
                     //notification icon
-                    Container(
-                      height: 70,
-                      width: 70,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AdvisiorPage(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        height: 70,
+                        width: 70,
 
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          color: Colors.white.withOpacity(0.08),
+                          border: Border.all(
+                            color: Colors.white.withOpacity(0.2),
+                            width: 1,
+                          ),
+                        ),
+                        child: Icon(Icons.chat, size: 30, color: Colors.white),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 35),
+              //png logo
+              Image.asset('assets/images/img.png', height: 300),
+              //text
+              SizedBox(height: 50),
+              Text(
+                "Listening...",
+                style: TextStyle(color: Colors.white, fontSize: 18),
+              ),
+              SizedBox(height: 40),
+              Text(
+                "Always listening to your body, ",
+                style: TextStyle(color: Colors.white, fontSize: 23),
+              ),
+              Text(
+                "guiding you towards better, ",
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+              Text(
+                "daily balance.., ",
+                style: TextStyle(color: Colors.white, fontSize: 19),
+              ),
+
+              //navbar
+              Padding(
+                padding: const EdgeInsets.all(25.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      height: 50,
+                      width: 50,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                         color: Colors.white.withOpacity(0.08),
@@ -151,85 +212,40 @@ class _chatPageState extends State<chatPage> {
                         ),
                       ),
                       child: Icon(
-                        Icons.settings_accessibility,
-                        size: 30,
+                        Icons.arrow_drop_up,
                         color: Colors.white,
+                        size: 40,
                       ),
+                    ),
+                    Container(
+                      height: 70,
+                      width: 70,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        color: Colors.white.withOpacity(0.08),
+                        border: Border.all(
+                          color: Colors.white.withOpacity(0.2),
+                          width: 1,
+                        ),
+                      ),
+                      child: Icon(Icons.mic, color: Colors.white, size: 40),
+                    ),
+                    Container(
+                      height: 50,
+                      width: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        color: Colors.white.withOpacity(0.08),
+                        border: Border.all(
+                          color: Colors.white.withOpacity(0.2),
+                          width: 1,
+                        ),
+                      ),
+                      child: Icon(Icons.memory_rounded, color: Colors.white),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 35),
-              //png logo
-              Image.asset('assets/images/image.png', height: 300),
-              //text
-              SizedBox(height: 50),
-              Text(
-                "Listening...",
-                style: TextStyle(color: Colors.white, fontSize: 18),
-              ),
-              SizedBox(height: 40),
-              Text(
-                "Always listening to your body, ",style: TextStyle(color: Colors.white, fontSize: 23),
-              ),
-              Text(
-                "guiding you towards better, ",style: TextStyle(color: Colors.white, fontSize: 20),
-              ),
-              Text(
-                "daily balance.., ",style: TextStyle(color: Colors.white, fontSize: 19),
-              ),
-
-
-              //navbar
-
-              Padding(
-                padding: const EdgeInsets.all(25.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Container(
-                                height: 50,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(50),
-                                  color: Colors.white.withOpacity(0.08),
-                                  border: Border.all(
-                                    color: Colors.white.withOpacity(0.2),
-                                    width: 1,
-                                  ),
-                                ),
-                                child: Icon(Icons.arrow_drop_up, color: Colors.white,size: 40,),
-                              ),
-                              Container(
-                                height: 70,
-                                width: 70,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(50),
-                                  color: Colors.white.withOpacity(0.08),
-                                  border: Border.all(
-                                    color: Colors.white.withOpacity(0.2),
-                                    width: 1,
-                                  ),
-                                ),
-                                child: Icon(Icons.mic, color: Colors.white,size: 40,),
-                              ),
-                              Container(
-                                height: 50,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(50),
-                                  color: Colors.white.withOpacity(0.08),
-                                  border: Border.all(
-                                    color: Colors.white.withOpacity(0.2),
-                                    width: 1,
-                                  ),
-                                ),
-                                child: Icon(Icons.memory_rounded, color: Colors.white),
-                              ),
-                  ],
-                ),
-              )
-
             ],
           ),
         ],

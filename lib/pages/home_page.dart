@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:fit_tracker_app/pages/advisior_page.dart';
+import 'package:fit_tracker_app/pages/chat_page.dart';
 import 'package:fit_tracker_app/utils/stat_item.dart';
 import 'package:flutter/material.dart';
 
@@ -364,20 +366,27 @@ class _HomePageState extends State<HomePage> {
                               ),
                               child: Icon(Icons.work, color: Colors.white),
                             ),
-                            Container(
-                              height: 70,
-                              width: 50,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                color: Colors.white.withOpacity(0.08),
-                                border: Border.all(
-                                  color: Colors.white.withOpacity(0.2),
-                                  width: 1,
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => AdvisiorPage(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                height: 70,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  color: Colors.white.withOpacity(0.08),
+                                  border: Border.all(
+                                    color: Colors.white.withOpacity(0.2),
+                                    width: 1,
+                                  ),
                                 ),
-                              ),
-                              child: Icon(
-                                Icons.heart_broken_rounded,
-                                color: Colors.white,
+                                child: Icon(Icons.send, color: Colors.white),
                               ),
                             ),
                           ],
@@ -400,18 +409,28 @@ class _HomePageState extends State<HomePage> {
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(3.0),
-                          child: Container(
-                            height: 50,
-                            width: 50,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(50),
-                              color: Colors.white.withOpacity(0.08),
-                              border: Border.all(
-                                color: Colors.white.withOpacity(0.2),
-                                width: 1,
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => chatPage(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.white.withOpacity(0.08),
+                                border: Border.all(
+                                  color: Colors.white.withOpacity(0.2),
+                                  width: 1,
+                                ),
                               ),
+                              child: Icon(Icons.chat, color: Colors.white),
                             ),
-                            child: Icon(Icons.chat, color: Colors.white),
                           ),
                         ),
                       ),
